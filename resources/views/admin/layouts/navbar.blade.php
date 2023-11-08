@@ -85,15 +85,22 @@
                         </a>
                     <a href="{{route('exercises')}}">
                         <div class="{{ Route::is('exercises') ? 'bg-lightTheme text-darkText' : 'bg-darkTheme' }} hover:text-darkText hover:bg-lightTheme text-lightText rounded-l-lg rounded-r-sm py-3 px-2 ml-6 flex gap-4 items-center">
-                            <i class="fa-solid fa-video"></i>
+                            <i class="fa-solid fa-person-walking"></i>
                             <span class="font-semibold text-lg">Exercises</span>
                         </div>
                     </a>
 
                     <a href="{{route('workouts')}}">
                         <div class="{{ Route::is('workouts') ? 'bg-lightTheme text-darkText' : 'bg-darkTheme' }} hover:text-darkText hover:bg-lightTheme text-lightText rounded-l-lg rounded-r-sm py-3 px-2 ml-6 flex gap-4 items-center">
-                            <i class="fa-solid fa-video"></i>
+                            <i class="fa-solid fa-dumbbell"></i>
                             <span class="font-semibold text-lg">Workouts</span>
+                        </div>
+                    </a>
+
+                    <a href="{{route('servicePackages')}}">
+                        <div class="{{ Route::is('servicePackages') ? 'bg-lightTheme text-darkText' : 'bg-darkTheme' }} hover:text-darkText hover:bg-lightTheme text-lightText rounded-l-lg rounded-r-sm py-3 px-2 ml-6 flex gap-4 items-center">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                            <span class="font-semibold text-lg">Services & Packages</span>
                         </div>
                     </a>
                     <a href="{{route('logout')}}">

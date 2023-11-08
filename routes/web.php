@@ -34,6 +34,9 @@ Route::get('/exercises', function () {
 Route::get('/workouts', function () {
     return view('admin.workouts');
 })->name('workouts');
+Route::get('/servicePackages', function () {
+    return view('admin.servicePackages');
+})->name('servicePackages');
 
 
 
@@ -64,3 +67,7 @@ Route::get('/exerciseForm', function () {
 Route::get('/workoutForm', function () {
     return view('admin.workoutForm');
 })->name('workoutForm');
+
+Route::get('/servicePackagesForm', function () {
+    return view('admin.servicePackagesForm');
+})->name('servicePackagesForm');

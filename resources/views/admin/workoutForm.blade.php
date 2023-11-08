@@ -73,6 +73,9 @@
                             <label for="description" class="text-darkText font-semibold text-lg">Description</label>
                             <textarea name="description" type="text" class="bg-lightTheme p-2 text-darkText border-[1px] border-darkText rounded-md focus:ring-0 focus:outline-none " rows="3"></textarea>
                         </div>
+                        <div class="w-full flex justify-end mt-4">
+                            <button class="px-6 py-2 bg-darkText text-whiteColor font-semibold text-lg rounded-md border-[1px] border-darkText hover:text-darkText hover:bg-whiteColor transition ease-in duration-2000">Sumbit</button>
+                        </div>
 
                     </div>
 
