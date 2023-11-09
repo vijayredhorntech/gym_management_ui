@@ -18,9 +18,10 @@ class trainerCard extends Component
     public $twitterLink;
     public $youtubeLink;
     public $stars;
+    public $id;
 
 
-    public function __construct( $name, $designation, $description, $image, $stars, $facebookLink, $instagramLink, $twitterLink, $youtubeLink)
+    public function __construct( $name, $designation, $description, $image, $stars, $facebookLink, $instagramLink, $twitterLink, $youtubeLink, $id)
     {
         $this->name = $name;
         $this->designation = $designation;
@@ -31,6 +32,7 @@ class trainerCard extends Component
         $this->twitterLink = $twitterLink;
         $this->stars = $stars;
         $this->youtubeLink = $youtubeLink;
+        $this->id = $id;
     }
 
     /**

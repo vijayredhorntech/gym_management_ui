@@ -53,20 +53,20 @@
         </div>
     </div>
     <div class="w-full h-max flex flex-col gap-4 mt-8">
-                    <a href="{{ route('admin') }}">
-                        <div class="{{ Route::is('admin') ? 'bg-lightTheme text-darkText' : 'bg-darkTheme' }} hover:text-darkText hover:bg-lightTheme text-lightText ml-6 rounded-l-lg rounded-r-sm py-3 px-2 flex gap-4 items-center">
+                    <a href="{{ route('dashboard.index') }}">
+                        <div class="{{ Route::is('dashboard.index') ? 'bg-lightTheme text-darkText' : 'bg-darkTheme' }} hover:text-darkText hover:bg-lightTheme text-lightText ml-6 rounded-l-lg rounded-r-sm py-3 px-2 flex gap-4 items-center">
                             <i class="fa fa-dashboard"></i>
                             <span class="font-semibold text-lg">Dashboard</span>
                         </div>
                     </a>
-                    <a href="{{ route('users') }}">
-                        <div class="{{ Route::is('users') ? 'bg-lightTheme text-darkText' : 'bg-darkTheme' }} hover:text-darkText hover:bg-lightTheme text-lightText ml-6 rounded-l-lg rounded-r-sm py-3 px-2 flex gap-4 items-center">
+                    <a href="{{ route('member.index') }}">
+                        <div class="{{ Route::is('member.index') ? 'bg-lightTheme text-darkText' : 'bg-darkTheme' }} hover:text-darkText hover:bg-lightTheme text-lightText ml-6 rounded-l-lg rounded-r-sm py-3 px-2 flex gap-4 items-center">
                             <i class="fa fa-user"></i>
                             <span class="font-semibold text-lg">Users</span>
                         </div>
                     </a>
-                    <a href="{{route('trainers')}}">
-                        <div class="{{ Route::is('trainers') ? 'bg-lightTheme text-darkText' : 'bg-darkTheme' }} hover:text-darkText hover:bg-lightTheme text-lightText rounded-l-lg rounded-r-sm py-3 px-2 ml-6 flex gap-4 items-center">
+                    <a href="{{route('trainer.index')}}">
+                        <div class="{{ Route::is('trainer.index') ? 'bg-lightTheme text-darkText' : 'bg-darkTheme' }} hover:text-darkText hover:bg-lightTheme text-lightText rounded-l-lg rounded-r-sm py-3 px-2 ml-6 flex gap-4 items-center">
                             <i class="fa-solid fa-certificate"></i>
                             <span class="font-semibold text-lg">Trainers</span>
                         </div>

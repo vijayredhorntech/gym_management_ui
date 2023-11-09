@@ -21,7 +21,7 @@
                             <div class="h-8 w-8 rounded-full bg-darkText flex justify-center items-center relative">
                                 <i class="fa fa-edit text-lightTheme"></i>
                                 <div class="absolute top-0 left-0 h-full w-full overflow-hidden ">
-                                    <input type="file" class="opacity-0">
+                                    <input type="file" name="media" class="opacity-0">
                                 </div>
 
                             </div>
@@ -35,23 +35,23 @@
                     <div>
                         <div class="flex flex-col gap-2 mt-3">
                             <label for="medialink" class="text-darkText font-semibold text-lg">Media Link</label>
-                            <input name="medialink" type="text" class="bg-lightTheme p-2 text-darkText border-[1px] border-darkText rounded-md focus:ring-0 focus:outline-none ">
+                            <input name="link" type="text" class="bg-lightTheme p-2 text-darkText border-[1px] border-darkText rounded-md focus:ring-0 focus:outline-none ">
                         </div>
 
 
                         <div class="flex flex-col gap-2 mt-3">
                             <label for="exercisename" class="text-darkText font-semibold text-lg">Exercise Name</label>
-                            <input name="exercisename" type="text" class="bg-lightTheme p-2 text-darkText border-[1px] border-darkText rounded-md focus:ring-0 focus:outline-none ">
+                            <input name="name" type="text" class="bg-lightTheme p-2 text-darkText border-[1px] border-darkText rounded-md focus:ring-0 focus:outline-none ">
                         </div>
 
                         <div class="flex flex-col gap-2 mt-3">
                             <label for="musclegroup" class="text-darkText font-semibold text-lg">Muscle Group</label>
-                            <input name="musclegroup" type="text" class="bg-lightTheme p-2 text-darkText border-[1px] border-darkText rounded-md focus:ring-0 focus:outline-none ">
+                            <input name="muscle_group" type="text" class="bg-lightTheme p-2 text-darkText border-[1px] border-darkText rounded-md focus:ring-0 focus:outline-none ">
                         </div>
 
                         <div class="flex flex-col gap-2 mt-3">
                             <label for="categories" class="text-darkText font-semibold text-lg">Exercise Category</label>
-                            <select name="categories" type="text" class="bg-lightTheme text-darkText p-2 border-[1px] border-darkText rounded-md focus:ring-0 focus:outline-none ">
+                            <select name="category" type="text" class="bg-lightTheme text-darkText p-2 border-[1px] border-darkText rounded-md focus:ring-0 focus:outline-none ">
                                 <option value="Strength">Strength</option>
                                 <option value="Training">Training</option>
                                 <option value="Cardio">Cardio</option>
