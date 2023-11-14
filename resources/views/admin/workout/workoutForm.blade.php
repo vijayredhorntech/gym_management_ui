@@ -13,7 +13,17 @@
                     <div class="bg-whiteColor py-2 px-2  border-b-[1px] border-darkText">
                         <span class="text-darkText font-semibold text-2xl">Add Workout</span>
                     </div>
-
+                    <form action="{{route('workout.store')}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                     <div class="flex flex-col p-2">
                         <div class="flex items-end">
                             <img class="h-24" src="{{asset('/assets/images/dashbaord/exercise.png')}}" alt="">
@@ -60,8 +70,8 @@
                         </div>
 
                         <div class="flex flex-col gap-2 mt-3">
-                            <label for="exerrcises" class="text-darkText font-semibold text-lg">Workout Exercises</label>
-                            <select name="exerrcise" type="text" class="bg-lightTheme text-darkText p-2 border-[1px] border-darkText rounded-md focus:ring-0 focus:outline-none ">
+                            <label for="exercises" class="text-darkText font-semibold text-lg">Workout Exercises</label>
+                            <select name="exercise" type="text" class="bg-lightTheme text-darkText p-2 border-[1px] border-darkText rounded-md focus:ring-0 focus:outline-none ">
 {{--                                // options cames from exercises table--}}
                                 <option value="Bench Press">Bench Press</option>
                                 <option value="Push Ups">Push Ups</option>
@@ -74,10 +84,10 @@
                             <textarea name="description" type="text" class="bg-lightTheme p-2 text-darkText border-[1px] border-darkText rounded-md focus:ring-0 focus:outline-none " rows="3"></textarea>
                         </div>
                         <div class="w-full flex justify-end mt-4">
-                            <button class="px-6 py-2 bg-darkText text-whiteColor font-semibold text-lg rounded-md border-[1px] border-darkText hover:text-darkText hover:bg-whiteColor transition ease-in duration-2000">Sumbit</button>
+                            <button type="submit" class="px-6 py-2 bg-darkText text-whiteColor font-semibold text-lg rounded-md border-[1px] border-darkText hover:text-darkText hover:bg-whiteColor transition ease-in duration-2000">Sumbit</button>
                         </div>
                     </div>
-
+                    </form>
 
                 </div>
             </div>

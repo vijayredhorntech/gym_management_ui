@@ -14,6 +14,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TrainerController;
+use App\Http\Controllers\ExerciseController;
+use App\Http\Controllers\WorkoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,12 +40,12 @@ use App\Http\Controllers\TrainerController;
 Route::get('/payments', function () {
     return view('admin.trainers');
 })->name('payments');
-Route::get('/gallery', function () {
-    return view('admin.gallery');
-})->name('gallery');
-Route::get('/exercises', function () {
-    return view('admin.exercises');
-})->name('exercises');
+//Route::get('/gallery', function () {
+//    return view('admin.gallery');
+//})->name('gallery');
+//Route::get('/exercises', function () {
+//    return view('admin.exercises');
+//})->name('exercises');
 Route::get('/workouts', function () {
     return view('admin.workouts');
 })->name('workouts');
@@ -69,13 +71,13 @@ Route::get('/logout', function () {
 //    return view('admin.userForm');
 //})->name('userForm');
 
-Route::get('/galleyForm', function () {
-    return view('admin.galleryForm');
-})->name('galleyForm');
+//Route::get('/galleyForm', function () {
+//    return view('admin.galleryForm');
+//})->name('galleyForm');
 
-Route::get('/exerciseForm', function () {
-    return view('admin.exerciseForm');
-})->name('exerciseForm');
+//Route::get('/exerciseForm', function () {
+//    return view('admin.exerciseForm');
+//})->name('exerciseForm');
 
 Route::get('/workoutForm', function () {
     return view('admin.workoutForm');
@@ -117,6 +119,33 @@ Route::prefix('trainer')->name('trainer.')->group(function(){
     Route::get('edit/{trainer}', [TrainerController::class, 'edit'])->name('edit');
     Route::post('update/{trainer}', [TrainerController::class, 'update'])->name('update');
     Route::get('delete/{trainer}', [TrainerController::class, 'destroy'])->name('delete');
+});
+
+Route::prefix('gallery')->name('gallery.')->group(function(){
+    Route::get('/', [GalleryController::class, 'index'])->name('index');
+    Route::get('create', [GalleryController::class, 'create'])->name('create');
+    Route::post('store', [GalleryController::class, 'store'])->name('store');
+    Route::get('edit/{gallery}', [GalleryController::class, 'edit'])->name('edit');
+    Route::post('update/{gallery}', [GalleryController::class, 'update'])->name('update');
+    Route::get('delete/{gallery}', [GalleryController::class, 'destroy'])->name('delete');
+});
+
+Route::prefix('exercise')->name('exercise.')->group(function(){
+    Route::get('/', [ExerciseController::class, 'index'])->name('index');
+    Route::get('create', [ExerciseController::class, 'create'])->name('create');
+    Route::post('store', [ExerciseController::class, 'store'])->name('store');
+    Route::get('edit/{exercise}', [ExerciseController::class, 'edit'])->name('edit');
+    Route::post('update/{exercise}', [ExerciseController::class, 'update'])->name('update');
+    Route::get('delete/{exercise}', [ExerciseController::class, 'destroy'])->name('delete');
+});
+
+Route::prefix('workout')->name('workout.')->group(function(){
+    Route::get('/', [WorkoutController::class, 'index'])->name('index');
+    Route::get('create', [WorkoutController::class, 'create'])->name('create');
+    Route::post('store', [WorkoutController::class, 'store'])->name('store');
+    Route::get('edit/{workout}', [WorkoutController::class, 'edit'])->name('edit');
+    Route::post('update/{workout}', [WorkoutController::class, 'update'])->name('update');
+    Route::get('delete/{workout}', [WorkoutController::class, 'destroy'])->name('delete');
 });
 
 
@@ -185,11 +214,4 @@ Route::prefix('trainer')->name('trainer.')->group(function(){
 //    Route::get('delete/{member}', [ProductController::class, 'delete'])->name('delete');
 //});
 //
-//Route::prefix('gallery')->name('gallery.')->group(function(){
-//    Route::get('/', [GalleryController::class, 'index'])->name('index');
-//    Route::get('create', [GalleryController::class, 'create'])->name('create');
-//    Route::post('store', [GalleryController::class, 'store'])->name('store');
-//    Route::get('edit/{member}', [GalleryController::class, 'edit'])->name('edit');
-//    Route::post('update', [GalleryController::class, 'update'])->name('update');
-//    Route::get('delete/{member}', [GalleryController::class, 'delete'])->name('delete');
-//});
+

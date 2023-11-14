@@ -11,7 +11,7 @@ class ExerciseRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class ExerciseRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'media' => 'required_without:link',
+            'link' => 'required_without:media',
+            'name' => 'required',
+            'muscle_group' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+
         ];
     }
 }

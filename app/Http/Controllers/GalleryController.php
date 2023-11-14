@@ -10,48 +10,47 @@ class GalleryController extends Controller{
     public function index()
     {
         $galleries = Gallery::all();
-        return view('gallery.index', compact('galleries'));
+        return view('admin.gallery.gallery', compact('galleries'));
     }
 
     public function create()
     {
-        return view('gallery.create');
+        $exercise = '';
+        return view('admin.gallery.galleryForm', compact('exercise'));
     }
 
     public function store(GalleryRequest $request)
     {
-        $gallery = Gallery::create($request->all());
+        $gallery = Gallery::create($request->except('media'));
         if($request->file('media')){
-            $galleryImage = $request->file('image')->store('public/gallery/media');
-            $gallery->image = str_replace('public/','', $galleryImage);
-        }else{
-            $gallery->link = $request->link;
+            $galleryMedia = $request->file('media')->store('public/gallery/media');
+            $gallery->media = str_replace('public/','', $galleryMedia);
+            $gallery->save();
         }
-        $gallery->save();
         return redirect()->route('gallery.index')->with('success', 'gallery created successfully.');
     }
 
     public function edit(Gallery $gallery)
     {
-        return view('gallery.edit', compact('gallery'));
+        return view('admin.gallery.galleryForm', compact('gallery'));
     }
 
     public function update(GalleryRequest $request, Gallery $gallery)
     {
         if($request->file('media')){
-            $gallery->image ? unlink('storage/'. $gallery->image) : '';
+            $gallery->media ? unlink('storage/'. $gallery->media) : '';
             $gallery->update([
-                'image'=>str_replace('public/','', $request->file('image')->store('gallery/media','public'))
+                'media'=>str_replace('public/','', $request->file('media')->store('gallery/media','public'))
             ]);
         }
-        $gallery->update($request->except('image'));
+        $gallery->update($request->except('media'));
         return redirect()->route('gallery.index')->with('success', 'gallery updated successfully.');
     }
 
     public function destroy(Gallery $gallery)
     {
-        if($gallery->image){
-            unlink('storage/'. $gallery->image);
+        if($gallery->media){
+            unlink('storage/'. $gallery->media);
         }
         $gallery->delete();
         return redirect()->route('gallery.index')->with('success', 'gallery deleted successfully.');

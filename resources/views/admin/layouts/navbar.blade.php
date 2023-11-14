@@ -77,21 +77,21 @@
                             <span class="font-semibold text-lg">Payments</span>
                         </div>
                     </a>
-                        <a href="{{route('gallery')}}">
-                            <div class="{{ Route::is('gallery') ? 'bg-lightTheme text-darkText' : 'bg-darkTheme' }} hover:text-darkText hover:bg-lightTheme text-lightText rounded-l-lg rounded-r-sm py-3 px-2 ml-6 flex gap-4 items-center">
+                        <a href="{{route('gallery.index')}}">
+                            <div class="{{ Route::is('gallery.index') ? 'bg-lightTheme text-darkText' : 'bg-darkTheme' }} hover:text-darkText hover:bg-lightTheme text-lightText rounded-l-lg rounded-r-sm py-3 px-2 ml-6 flex gap-4 items-center">
                                 <i class="fa-solid fa-video"></i>
                                 <span class="font-semibold text-lg">Gallery</span>
                             </div>
                         </a>
-                    <a href="{{route('exercises')}}">
-                        <div class="{{ Route::is('exercises') ? 'bg-lightTheme text-darkText' : 'bg-darkTheme' }} hover:text-darkText hover:bg-lightTheme text-lightText rounded-l-lg rounded-r-sm py-3 px-2 ml-6 flex gap-4 items-center">
+                    <a href="{{route('exercise.index')}}">
+                        <div class="{{ Route::is('exercise.index') ? 'bg-lightTheme text-darkText' : 'bg-darkTheme' }} hover:text-darkText hover:bg-lightTheme text-lightText rounded-l-lg rounded-r-sm py-3 px-2 ml-6 flex gap-4 items-center">
                             <i class="fa-solid fa-person-walking"></i>
                             <span class="font-semibold text-lg">Exercises</span>
                         </div>
                     </a>
 
-                    <a href="{{route('workouts')}}">
-                        <div class="{{ Route::is('workouts') ? 'bg-lightTheme text-darkText' : 'bg-darkTheme' }} hover:text-darkText hover:bg-lightTheme text-lightText rounded-l-lg rounded-r-sm py-3 px-2 ml-6 flex gap-4 items-center">
+                    <a href="{{route('workout.index')}}">
+                        <div class="{{ Route::is('workout.index') ? 'bg-lightTheme text-darkText' : 'bg-darkTheme' }} hover:text-darkText hover:bg-lightTheme text-lightText rounded-l-lg rounded-r-sm py-3 px-2 ml-6 flex gap-4 items-center">
                             <i class="fa-solid fa-dumbbell"></i>
                             <span class="font-semibold text-lg">Workouts</span>
                         </div>

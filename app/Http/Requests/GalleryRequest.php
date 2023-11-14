@@ -22,8 +22,6 @@ class GalleryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required',
-            'description' => 'required',
             'media' => 'required_without:link',
             'link' => 'required_without:media',
         ];

@@ -1,9 +1,10 @@
 <div class="w-full bg-whiteColor shadow-2xl shadow-black rounded-md px-3 pt-12 pb-4 relative">
-
-    <div class="absolute -right-2 -top-2  bg-darkText text-lightTheme hover:bg-lightTheme hover:text-darkText border-[1px] border-darkText transition ease-in duration-2000 h-8 w-8 rounded-full  flex items-center justify-center">
-        <i class="fa fa-xmark"></i>
-    </div>
-    <a href="{{route('exerciseForm')}}">
+    <a href="{{route('exercise.delete', ['exercise' => $id])}}">
+        <div class="absolute -right-2 -top-2  bg-darkText text-lightTheme hover:bg-lightTheme hover:text-darkText border-[1px] border-darkText transition ease-in duration-2000 h-8 w-8 rounded-full  flex items-center justify-center">
+            <i class="fa fa-xmark"></i>
+        </div>
+    </a>
+    <a href="{{route('exercise.edit', ['exercise' => $id])}}">
         <div class="absolute -right-2 top-8  bg-darkText text-lightTheme hover:bg-lightTheme hover:text-darkText border-[1px] border-darkText transition ease-in duration-2000 h-8 w-8 rounded-full  flex items-center justify-center">
             <i class="fa fa-pencil"></i>
         </div>

@@ -11,44 +11,47 @@ class ExerciseController extends Controller
     public function index()
     {
         $exercises = Exercise::all();
-        return view('exercise.index', compact('exercises'));
+        return view('admin.exercise.exercises', compact('exercises'));
     }
 
     public function create()
     {
-        return view('exercise.create');
+        $exercise = '';
+        return view('admin.exercise.exerciseForm', compact('exercise'));
     }
 
     public function store(ExerciseRequest $request)
     {
-        $exercise = Exercise::create($request->all());
-        $exerciseImage = $request->file('image')->store('public/exercise/image');
-        $exercise->image = str_replace('public/','', $exerciseImage);
-        $exercise->save();
+        $exercise = Exercise::create($request->except('media'));
+        if($request->file('media')){
+            $exerciseMedia = $request->file('media')->store('public/exercise/media');
+            $exercise->media = str_replace('public/','', $exerciseMedia);
+            $exercise->save();
+        }
         return redirect()->route('exercise.index')->with('success', 'exercise created successfully.');
     }
 
     public function edit(Exercise $exercise)
     {
-        return view('exercise.edit', compact('exercise'));
+        return view('admin.exercise.exerciseForm', compact('exercise'));
     }
 
     public function update(ExerciseRequest $request, Exercise $exercise)
     {
-        if($request->file('image')){
-            $exercise->image ? unlink('storage/'. $exercise->image) : '';
+        if($request->file('media')){
+            $exercise->media ? unlink('storage/'. $exercise->media) : '';
             $exercise->update([
-                'image'=>str_replace('public/','', $request->file('image')->store('exercise/image','public'))
+                'media'=>str_replace('public/','', $request->file('media')->store('exercise/media','public'))
             ]);
         }
-        $exercise->update($request->except('image'));
+        $exercise->update($request->except('media'));
         return redirect()->route('exercise.index')->with('success', 'exercise updated successfully.');
     }
 
     public function destroy(Exercise $exercise)
     {
-        if($exercise->image){
-            unlink('storage/'. $exercise->image);
+        if($exercise->media){
+            unlink('storage/'. $exercise->media);
         }
         $exercise->delete();
         return redirect()->route('exercise.index')->with('success', 'exercise deleted successfully.');

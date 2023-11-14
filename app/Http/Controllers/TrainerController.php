@@ -32,7 +32,7 @@ class TrainerController extends Controller
 
     public function edit(Trainer $trainer)
     {
-        return view('trainer.trainer.trainerForm', compact('trainer'));
+        return view('admin.trainer.trainerForm', compact('trainer'));
     }
 
     public function update(TrainerRequest $request, Trainer $trainer)

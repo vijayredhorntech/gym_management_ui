@@ -11,7 +11,7 @@ class WorkoutRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class WorkoutRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'media' => '',
+            'name' => 'required',
+            'duration' => 'required',
+            'calories' => 'required',
+            'category' => 'required',
+            'exercise' => 'required',
+            'description' => 'required',
         ];
     }
 }

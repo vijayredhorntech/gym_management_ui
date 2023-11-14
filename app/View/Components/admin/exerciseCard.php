@@ -16,15 +16,17 @@ class exerciseCard extends Component
     public $exerciseCategory;
     public $description;
     public $images = [];
+    public $id;
 
 
-    public function __construct( $exerciseName, $muscleGroup, $exerciseCategory, $description, $images)
+    public function __construct( $exerciseName, $muscleGroup, $exerciseCategory, $description, $images, $id)
     {
         $this->exerciseName = $exerciseName;
         $this->muscleGroup = $muscleGroup;
         $this->exerciseCategory = $exerciseCategory;
         $this->description = $description;
         $this->images = $images;
+        $this->id = $id;
     }
     /**
      * Get the view / contents that represent the component.
